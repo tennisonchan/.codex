@@ -1,0 +1,84 @@
+model = "gpt-5.1-codex"
+model_reasoning_effort = "high"
+# model_reasoning_summary = "concise"
+[projects."/Users/tennisonchan/Developer/truewind-core"]
+trust_level = "trusted"
+approval_policy = "never"
+
+[projects."/Users/tennisonchan/.codex"]
+trust_level = "trusted"
+
+[projects."/Users/tennisonchan/Developer/personal-assistant"]
+trust_level = "trusted"
+
+[mcp_servers.chrome-devtools]
+command = "npx"
+args = ["chrome-devtools-mcp@latest"]
+startup_timeout_sec = 30.0
+
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp", "--api-key", "ctx7sk-370d9e0d-0caf-46e9-8c88-935df6091f09"]
+startup_timeout_sec = 20.0
+
+[mcp_servers.linear]
+command = "npx"
+args = ["-y", "mcp-remote", "https://mcp.linear.app/sse"]
+startup_timeout_sec = 30.0
+
+[mcp_servers.notion]
+command = "npx"
+args = ["-y", "mcp-remote", "https://mcp.notion.com/sse"]
+startup_timeout_sec = 30.0
+
+[mcp_servers.playwright]
+command = "npx"
+args = ["@playwright/mcp@latest"]
+startup_timeout_sec = 30.0
+
+[mcp_servers.sentry]
+command = "npx"
+args = ["-y", "mcp-remote@latest", "https://mcp.sentry.dev/mcp"]
+startup_timeout_sec = 30.0
+
+[mcp_servers.slack]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-slack"]
+startup_timeout_sec = 30.0
+
+[mcp_servers.slack.env]
+SLACK_BOT_TOKEN = "${SLACK_BOT_TOKEN}"
+SLACK_CHANNEL_IDS = "${SLACK_CHANNEL_IDS}"
+SLACK_TEAM_ID = "${SLACK_TEAM_ID}"
+
+[mcp_servers.supabase]
+command = "npx"
+args = ["-y", "mcp-remote@latest", "https://mcp.supabase.com/mcp?read_only=true&project_ref=dxyuuxqtkuilpmlgncef"]
+startup_timeout_sec = 30.0
+
+[mcp_servers.bitwarden]
+command = "npx"
+args = ["-y", "@bitwarden/mcp-server"]
+startup_timeout_sec = 30.0
+
+[mcp_servers.bitwarden.env]
+BW_SESSION = "${BW_SESSION}"
+BW_CLIENT_ID = "${BW_CLIENT_ID}"
+BW_CLIENT_SECRET = "${BW_CLIENT_SECRET}"
+
+[notice]
+hide_gpt5_1_migration_prompt = true
+
+[features]
+streamable_shell = true          # enable the streamable exec tool
+web_search_request = true        # allow the model to request web searches
+ghost_commit = true
+rmcp_client = true
+# view_image_tool defaults to true; omit to keep defaults
+
+[tools]
+# Enable web search tool (alias: web_search_request). Default: false
+# web_search_request = false
+
+# Enable the view_image tool so the agent can attach local images. Default: true
+view_image_tool = true
