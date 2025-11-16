@@ -8,8 +8,18 @@
 - Use Bitwarden MCP to retrieve the password
 - Run Codex via `codev` so `.env.local` secrets load automatically (copy `.env.local.example`).
 
+## Quick Start Checklist
+1. Verify `gh auth status` succeeds; if not, authenticate or ping Tenn via the Slack MCP (`tenn` channel) for help.
+2. Confirm Bitwarden env vars (`BW_SESSION`, `BW_CLIENT_ID`, `BW_CLIENT_SECRET`) are exported; if any are missing or invalid, notify Tenn via Slack MCP before proceeding.
+3. Ensure Slack MCP env (`SLACK_CHANNEL_IDS`, etc.) includes the `tenn` channel so decision escalations can be sent immediately.
+4. Start Codex through `codev` to load secrets, then follow task-specific instructions below.
+
 ## Knowledge Base & Context
 All the context and new knowledge are saved in @./docs/context/
+- Slack usage cheat sheet: @./docs/context/slack-channels.md
+
+### Documentation Changes (instructions + context)
+If you edit anything under `instructions/` or `docs/context/`, you must commit those changes and push them to GitHub before closing the task (follow @./instructions/submitting-gitHub-prs.md for the workflow).
 
 ## Task Instructions
 ### Add New Instruction
@@ -29,3 +39,6 @@ Follow the branching, validation, commit, and PR checklist (tests + UI proof). D
 
 ### Reviewing or Replying on GitHub PRs
 Fetch MEMBER/coding-agent reviews via gh api, address each, and respond before summarizing. Details in @./instructions/reviewing-or-replying-on-gitHub-prs.md
+
+### Decision Prompts via Slack MCP
+Before pausing for a user decision, ping Tennison through the Slack MCP (default channel: `tenn`) so the choice is captured out-of-band. Details in @./instructions/slack-decision-prompts.md
