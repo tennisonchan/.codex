@@ -18,7 +18,7 @@ startup_timeout_sec = 30.0
 
 [mcp_servers.context7]
 command = "npx"
-args = ["-y", "@upstash/context7-mcp", "--api-key", "ctx7sk-370d9e0d-0caf-46e9-8c88-935df6091f09"]
+args = ["-y", "@upstash/context7-mcp", "--api-key", "${CONTEXT7_API_KEY}"]
 startup_timeout_sec = 20.0
 
 [mcp_servers.linear]
@@ -28,8 +28,11 @@ startup_timeout_sec = 30.0
 
 [mcp_servers.notion]
 command = "npx"
-args = ["-y", "mcp-remote", "https://mcp.notion.com/sse"]
+args = ["-y", "@notionhq/notion-mcp-server"]
 startup_timeout_sec = 30.0
+
+[mcp_servers.notion.env]
+NOTION_TOKEN = "${NOTION_TOKEN}"
 
 [mcp_servers.playwright]
 command = "npx"
