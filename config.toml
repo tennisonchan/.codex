@@ -59,16 +59,6 @@ command = "npx"
 args = ["-y", "mcp-remote@latest", "https://mcp.supabase.com/mcp?read_only=true&project_ref=dxyuuxqtkuilpmlgncef"]
 startup_timeout_sec = 30.0
 
-[mcp_servers.bitwarden]
-command = "npx"
-args = ["-y", "@bitwarden/mcp-server"]
-startup_timeout_sec = 30.0
-
-[mcp_servers.bitwarden.env]
-BW_SESSION = "${BW_SESSION}"
-BW_CLIENT_ID = "${BW_CLIENT_ID}"
-BW_CLIENT_SECRET = "${BW_CLIENT_SECRET}"
-
 [notice]
 hide_gpt5_1_migration_prompt = true
 
