@@ -26,6 +26,9 @@ command = "npx"
 args = ["-y", "mcp-remote", "https://mcp.linear.app/sse"]
 startup_timeout_sec = 30.0
 
+[mcp_servers.linear.env]
+LINEAR_API_KEY = "${LINEAR_API_KEY}"
+
 [mcp_servers.notion]
 command = "npx"
 args = ["-y", "@notionhq/notion-mcp-server"]
@@ -41,8 +44,12 @@ startup_timeout_sec = 30.0
 
 [mcp_servers.sentry]
 command = "npx"
-args = ["-y", "mcp-remote@latest", "https://mcp.sentry.dev/mcp"]
+args = ["-y", "@sentry/mcp-server"]
 startup_timeout_sec = 30.0
+
+[mcp_servers.sentry.env]
+SENTRY_ACCESS_TOKEN = "${SENTRY_ACCESS_TOKEN}"
+SENTRY_HOST = "truewind-ai.sentry.io"
 
 [mcp_servers.slack]
 command = "npx"
