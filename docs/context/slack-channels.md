@@ -1,7 +1,9 @@
 # Slack Channel Roles
 
-- `engineering` (`C05GRNTBUDN`): Use for engineering discussions, PR review requests (include the PR link), or general technical collaboration threads.
-- `escalations-dev` (`C06TFGKCT1A`): Customer Success escalation room; CS posts production bugs or incidents affecting `truewind-core`, and engineers coordinate fixes there.
-- `tenn` (private DM / channel ID defined in `SLACK_CHANNEL_IDS`): Direct line to Tennison for decisions Codex agents cannot make alone; default destination for decision escalations described in @./instructions/slack-decision-prompts.md.
+Always follow @./instructions/communication-with-slack-api.md: send escalations via Slack's Web API (`chat.postMessage`) with `$SLACK_BOT_TOKEN`, selecting the channel alias from `SLACK_CHANNEL_IDS`.
 
-Refer back to this note whenever you need to choose a target for Slack MCP notifications.
+- `tenn` (`D04BPMQHZJN`): Private DM to Tennison for blocker escalations, decision prompts, or urgent FYIs that must reach Tenn directly. Include the active task ID/branch, describe the decision or assistance needed, and log the ping in docs/tasks or your Codex update.
+- `engineering` (`C05GRNTBUDN`): Team-wide engineering room for PR review requests (attach the PR link), architectural clarifications, or heads-up broadly relevant to builders.
+- `escalations-dev` (`C06TFGKCT1A`): Customer Success / incident bridge for production-impacting bugs; loop in when CS reports an outage or financial discrepancy that engineers must triage immediately.
+
+Keep these IDs synced with `SLACK_CHANNEL_IDS` (format `alias=channel_id`) so your automation payloads resolve to the right targets.

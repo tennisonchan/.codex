@@ -3,3 +3,5 @@ history.jsonl
 log/
 sessions/
 .env.local
+
+/docs/tasks/

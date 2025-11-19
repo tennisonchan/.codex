@@ -52,16 +52,6 @@ startup_timeout_sec = 30.0
 SENTRY_ACCESS_TOKEN = "${SENTRY_ACCESS_TOKEN}"
 SENTRY_HOST = "truewind-ai.sentry.io"
 
-[mcp_servers.slack]
-command = "npx"
-args = ["-y", "@modelcontextprotocol/server-slack"]
-startup_timeout_sec = 30.0
-
-[mcp_servers.slack.env]
-SLACK_BOT_TOKEN = "${SLACK_BOT_TOKEN}"
-SLACK_CHANNEL_IDS = "${SLACK_CHANNEL_IDS}"
-SLACK_TEAM_ID = "${SLACK_TEAM_ID}"
-
 [mcp_servers.supabase]
 command = "npx"
 args = ["-y", "mcp-remote@latest", "https://mcp.supabase.com/mcp?read_only=true&project_ref=dxyuuxqtkuilpmlgncef"]
@@ -83,3 +73,8 @@ rmcp_client = true
 
 # Enable the view_image tool so the agent can attach local images. Default: true
 view_image_tool = true
+
+[shell_environment_policy]
+inherit = "all"
+ignore_default_excludes = true
+experimental_use_profile = true
