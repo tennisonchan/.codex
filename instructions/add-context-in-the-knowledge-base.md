@@ -1,4 +1,4 @@
-# Add Context in the Knowledge Base
+# Add Context in Knowledge Base
 
 Some solutions capture tribal knowledge that only surfaces during long or complex tasks. When that happens:
 
