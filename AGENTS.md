@@ -3,12 +3,14 @@
 ## Core Behaviors
 - Work from a dedicated task worktree and keep an audit trail for every action (Slack pings via API, PR actions via `gh`, task notes in `docs/tasks`).
 - Default to accuracy and traceability: cite sources, log decisions, and keep secrets in Bitwarden MCP only.
+- Grow the knowledge base every task: convert new learnings into `docs/context/`, `instructions/`, or `scripts/` and surface them in this handbook.
 - Follow the linked SOPs instead of improvising; update them immediately when you find gaps.
 
 ## Quick Start (always)
 1. Run `gh auth status`; if broken, ping Tenn (`tenn=D04BPMQHZJN`) via Slack API.
 2. Start Codex through `codev` so `.env.local` is loaded; confirm `SLACK_BOT_TOKEN` and `SLACK_CHANNEL_IDS` (must include `tenn=D04BPMQHZJN`).
 3. Create a task worktree using `~/.codex/scripts/create_tree.sh <branch> [base]` before editing; if you ever work manually, set upstream immediately (`git push -u origin <branch>`).
+4. Open or create `docs/tasks/{timestamp}-{slug}.md` for this task; capture goal and initial plan.
 
 ## Tooling Defaults
 - GitHub: use `gh` for PRs, reviews, metadata; keep all GitHub actions traceable.
@@ -18,14 +20,30 @@
 - UI proof: capture Playwright MCP screenshots; store under `docs/screenshots/` (UI diffs) or `docs/tasks/` (workflow evidence).
 - Scripts: store new helper scripts under `./scripts/`, make them executable, and document them here when added.
 
-## Standard Task Flow
-1. **Log & Plan** — Open/create `docs/tasks/{timestamp}-{slug}.md`, capture goal/assumptions, and make a multi-step plan (see @./instructions/task-context-and-planning.md).
-2. **Communicate** — Use Slack API for escalations and updates; channel aliases live in @./docs/context/slack-channels.md and the SOP is @./instructions/communication-with-slack-api.md.
-3. **Build** — Follow repo guardrails; for UI work take snapshots (see @./instructions/snapshot-requirements-ui-work.md).
-4. **Ship** — Use @./instructions/submitting-github-prs.md for branching, validation, PR text, and review requests (channel post + random @eng DM).
-5. **Review loops** — When responding on PRs, follow @./instructions/reviewing-or-replying-on-github-prs.md.
-6. **Reflect & Capture** — Run the loop in @./instructions/post-task-reflection.md; add new instructions/context per @./instructions/add-new-instruction.md and @./instructions/add-context-in-the-knowledge-base.md.
+## Operating Loop (Living Knowledge)
+1. **Log & Plan** — Use `docs/tasks/{timestamp}-{slug}.md`; follow @./instructions/task-context-and-planning.md.
+2. **Communicate** — Use Slack API for escalations/updates; channel aliases: @./docs/context/slack-channels.md; SOP: @./instructions/communication-with-slack-api.md.
+3. **Build** — Follow repo guardrails; for UI work take snapshots per @./instructions/snapshot-requirements-ui-work.md.
+4. **Ship** — Branch/validation/PR text/review requests per @./instructions/submitting-github-prs.md.
+5. **Capture & Grow (do every task)** — Decide which artifacts to add:
+   - Task log: keep `docs/tasks/{timestamp}-{slug}.md` up to date.
+   - Context: add `docs/context/{slug}.md` (scenario → decision → outcome). Link it in AGENTS under Context Hotlinks.
+   - Instruction: add `instructions/{topic}.md` (purpose, when to use, steps, examples). Link it in AGENTS under SOPs.
+   - Script: add to `scripts/` with exec bit, shebang, and header (what it does, inputs, usage). Update `scripts/README.md` and list it in AGENTS Scripts.
+6. **Reflect & Publish** — Run @./instructions/post-task-reflection.md. Commit/push code + new artifacts together; note new docs/scripts in PR/Slack updates.
+
+## Artifact Rules
+- `docs/tasks/` — one file per task, `YYYY-MM-DD-slug.md`; summarize goal, plan, decisions, blockers, links (PRs, tickets, screenshots).
+- `docs/context/` — reusable knowledge; start with a 3–5 bullet takeaway; include timelines/evidence links if useful.
+- `instructions/` — repeatable process guides; keep single-focus; include "When to use" and "Steps"; prefer command snippets over prose.
+- `scripts/` — name `verb-target.sh`; include header with description/usage/deps; mark executable; keep examples minimal and tested.
+- `docs/screenshots/` — UI proof: store Playwright MCP captures; link from task/context docs.
+
+## Indexes to Maintain
+- **SOPs**: @./instructions/task-context-and-planning.md, @./instructions/communication-with-slack-api.md, @./instructions/snapshot-requirements-ui-work.md, @./instructions/submitting-github-prs.md, @./instructions/reviewing-or-replying-on-github-prs.md, @./instructions/post-task-reflection.md, @./instructions/add-new-instruction.md, @./instructions/add-context-in-the-knowledge-base.md, @./instructions/script-lifecycle.md.
+- **Context Hotlinks**: start at @./docs/context/slack-channels.md; add new context docs as they are created.
+- **Scripts**: @./scripts/create_tree.sh (task worktree bootstrap). Add each new script here and in `scripts/README.md` with a one-liner.
 
 ## Knowledge Base
-- Context and reference docs live in `./docs/context/` (start with @./docs/context/slack-channels.md).
-- When `instructions/`, `docs/context/`, or this file change, commit and push them before closing the task (workflow in @./instructions/submitting-github-prs.md).
+- Context and reference docs live in `./docs/context/`.
+- When `instructions/`, `docs/context/`, `scripts/`, or this file change, commit and push them with the task’s code (see @./instructions/submitting-github-prs.md).
