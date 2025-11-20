@@ -1,5 +1,7 @@
 ## Reviewing or Replying on GitHub PRs
 
+- Work directly on the PR branch (checkout the branch; do **not** create a new worktree for response-only changes).
+
 ### Get the feedback
 - Identify the PR URL.
 - Inline comments: `gh api repos/<org>/<repo>/pulls/<PR_NUMBER>/comments --paginate` and keep only `author_association == "MEMBER"` or coding-agent accounts (often `-agent` or `author_association == "NONE"`).

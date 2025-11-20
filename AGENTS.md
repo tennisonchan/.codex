@@ -9,7 +9,7 @@
 ## Quick Start (always)
 1. Run `gh auth status`; if broken, ping Tenn (`tenn=D04BPMQHZJN`) via Slack API.
 2. Start Codex through `codev` so `.env.local` is loaded; confirm `SLACK_BOT_TOKEN` and `SLACK_CHANNEL_IDS` (must include `tenn=D04BPMQHZJN`).
-3. Create a task worktree using `~/.codex/scripts/create_tree.sh <branch> [base]` before editing; if you ever work manually, set upstream immediately (`git push -u origin <branch>`).
+3. For new work: create a task worktree using `~/.codex/scripts/create_tree.sh <branch> [base]` before editing. When updating/replying to an existing PR, **do not create a new worktree**—checkout the PR branch and work directly on it (ensure upstream is set if missing).
 4. Open or create `docs/tasks/{timestamp}-{slug}.md` for this task; capture goal and initial plan.
 
 ## Tooling Defaults

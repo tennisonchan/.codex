@@ -4,7 +4,8 @@
 Ship PRs in a consistent, reviewable, and auditable way—every time.
 
 ### Before you start
-- Create a task worktree with `~/.codex/scripts/create_tree.sh <branch> [base]` from repo root (copies env files, installs deps, sets upstream). If you ever create a worktree manually, immediately run `git push -u origin <branch>` (or `git branch --set-upstream-to=origin/<branch> <branch>`) to avoid upstream mismatch.
+- New PR work: create a task worktree with `~/.codex/scripts/create_tree.sh <branch> [base]` from repo root (copies env files, installs deps, sets upstream). If you ever create a worktree manually, immediately run `git push -u origin <branch>` (or `git branch --set-upstream-to=origin/<branch> <branch>`) to avoid upstream mismatch.
+- Updating/replying on an existing PR: checkout the PR’s branch directly (no new worktree) and ensure it tracks `origin/<branch>`.
 - Confirm `gh auth status` works and follow AGENTS.md guardrails for coding standards and security.
 
 ### Build & validate
