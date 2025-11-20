@@ -1,12 +1,23 @@
-# Slack Channel Roles
+# Slack Channel & User Group Reference
 
-Always follow @./instructions/communication-with-slack-api.md: send escalations via Slack's Web API (`chat.postMessage`) with `$SLACK_BOT_TOKEN`, selecting the channel alias from `SLACK_CHANNEL_IDS`.
+Use @./instructions/communication-with-slack-api.md with `chat.postMessage` and aliases from `SLACK_CHANNEL_IDS`.
 
-- `tenn` (`D04BPMQHZJN`): Private DM to Tennison for blocker escalations, decision prompts, or urgent FYIs that must reach Tenn directly. Include the active task ID/branch, describe the decision or assistance needed, and log the ping in docs/tasks or your Codex update.
-- `engineering` (`C05GRNTBUDN`): Team-wide engineering room for PR review requests (attach the PR link), architectural clarifications, or heads-up broadly relevant to builders.
-- `escalations-dev` (`C06TFGKCT1A`): Customer Success / incident bridge for production-impacting bugs; loop in when CS reports an outage or financial discrepancy that engineers must triage immediately.
+## Channel aliases
+- `tenn` (`D04BPMQHZJN`): DM Tennison for blockers, decision prompts, or urgent FYIs. Include task ID/branch and log the ping in `docs/tasks/...`.
+- `engineering` (`C05GRNTBUDN`): PR review requests (attach link + one-line summary), architectural clarifications, broad engineering heads-ups.
+- `escalations-dev` (`C06TFGKCT1A`): Incident bridge when CS reports outages/financial discrepancies; use for production-impacting bugs.
 
-Keep these IDs synced with `SLACK_CHANNEL_IDS` (format `alias=channel_id`) so your automation payloads resolve to the right targets.
+Keep these IDs synced with `SLACK_CHANNEL_IDS` (`alias=channel_id`) so automation payloads resolve correctly.
 
-## User Groups
-- engineering group: `@eng` (`S04DBQR22LE`): `U04CDCYD6BS` (Tennison Chan), `U06207X2BK6` (Caio Carvalho), `U07223EMWJ0` (Renato Menegasso), `U07HYV833UP` (Greg Konush), `U0868F9RU2Z` (Tiago Romero), `U08KE4CRXNV` (Chev Eldrid), `U08LPE05S15` (Jeff Lai), `U09MQ5WS621` (Vijayasankar Jothi)
+## User groups
+- `@eng` (`S04DBQR22LE`):
+  - `U04CDCYD6BS` Tennison Chan
+  - `U06207X2BK6` Caio Carvalho
+  - `U07223EMWJ0` Renato Menegasso
+  - `U07HYV833UP` Greg Konush
+  - `U0868F9RU2Z` Tiago Romero
+  - `U08KE4CRXNV` Chev Eldrid
+  - `U08LPE05S15` Jeff Lai
+  - `U09MQ5WS621` Vijayasankar Jothi
+
+Use this roster when randomly selecting an @eng reviewer DM (exclude Tennison by default).

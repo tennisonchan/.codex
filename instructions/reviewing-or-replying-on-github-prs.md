@@ -1,8 +1,15 @@
 ## Reviewing or Replying on GitHub PRs
-- Identify the PR URL; ask if unclear.
-- Fetch inline comments via `gh api repos/<org>/<repo>/pulls/<PR_NUMBER>/comments --paginate | jq ...` and keep only entries where `author_association` is `"MEMBER"` or from coding-agent accounts (often ending with `-agent` or `author_association == "NONE"`).
-- Fetch review summaries with `gh api repos/<org>/<repo>/pulls/<PR_NUMBER>/reviews --paginate` to capture high-level feedback.
-- For each MEMBER or coding-agent comment: decide whether it needs a code change, a clarification, or both. Make necessary code edits before responding.
-- Reply via `gh api repos/<org>/<repo>/pulls/comments/<COMMENT_ID>/replies --method POST -f body='<message>'`; avoid placeholder or throwaway replies.
-- Reference the affected file/section and tests in your reply when changes were made. For acknowledgements, keep responses concise but still routed through the API.
-- After all qualifying comments are addressed, note in your final update that every MEMBER and coding-agent comment on the PR received a response.
+
+### Get the feedback
+- Identify the PR URL.
+- Inline comments: `gh api repos/<org>/<repo>/pulls/<PR_NUMBER>/comments --paginate` and keep only `author_association == "MEMBER"` or coding-agent accounts (often `-agent` or `author_association == "NONE"`).
+- Review summaries: `gh api repos/<org>/<repo>/pulls/<PR_NUMBER>/reviews --paginate` for high-level feedback.
+
+### Process each comment
+- Decide: code change, clarification, or both. Make the change before replying when possible.
+- Reply via API: `gh api repos/<org>/<repo>/pulls/comments/<COMMENT_ID>/replies --method POST -f body='<message>'` (no placeholder replies).
+- When changes were made, cite the file/section and tests run. For acknowledgements, keep concise but still send via the API.
+
+### Finish
+- Ensure every MEMBER/coding-agent comment has a response.
+- Mention in your final PR update that all such comments were addressed.

@@ -4,6 +4,12 @@
 **Status:** Design Phase
 **Approach:** Codex CLI Process Execution
 
+## At a Glance
+- Goal: run tasks in isolated `claude-code` processes with per-task workspaces for stronger isolation and richer tool access.
+- Emphasis: workspace prep, process supervision, output parsing, timeout handling.
+- Decisions: standardize workspace template, define resource limits, and choose result schema.
+- Next step: prototype supervisor that spawns a single Codex CLI worker from queue input.
+
 ## Executive Summary
 
 This design uses **Codex CLI processes** instead of direct Anthropic API calls. Each task spawns an isolated `claude-code` process with its own workspace, providing strong isolation and access to full Claude Code capabilities.

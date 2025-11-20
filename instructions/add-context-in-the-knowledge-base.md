@@ -1,10 +1,9 @@
 # Add Context in Knowledge Base
 
-Some solutions capture tribal knowledge that only surfaces during long or complex tasks. When that happens:
+Capture tribal knowledge that would speed up future agents.
 
-1. Evaluate whether the insight will help future agents avoid pitfalls or ramp up faster.
-2. If yes, describe the scenario, decisions, and outcomes in a dedicated markdown file within `./docs/context/` (this file lives there as an example).
-3. Capture concise, action-oriented takeaways so others can skim quickly.
-4. When the new document is ready, add a short summary plus an `@./docs/context/...` reference inside `AGENTS.md` so every agent sees it under Task Instructions.
-
-Keeping contextual write-ups in `./docs/context` makes it easy to link supporting evidence, screenshots, or timelines alongside process guidance stored under `./instructions`.
+1) Evaluate impact: will this prevent rework or speed onboarding?
+2) Write a markdown in `./docs/context/` with scenario, decisions, outcomes, and quick takeaways (actionable bullets first).
+3) Link evidence (screenshots, timelines, tickets) nearby if useful.
+4) Add a one-line summary + `@./docs/context/...` reference to AGENTS.md so it’s discoverable.
+5) Commit/push with the task that generated it.

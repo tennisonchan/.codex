@@ -1,3 +1,5 @@
 ## Snapshot Requirements (UI Work)
-- When UI changes are involved, take Playwright MCP snapshots of the relevant page states.
-- Save the assets in `/docs/screenshots/` using descriptive filenames and reference them in the PR/test notes.
+- Capture Playwright MCP screenshots for any UI-impacting change (before/after states as needed).
+- Save under `/docs/screenshots/` with descriptive names (`feature-state.png`), or `/docs/tasks/` if evidencing a workflow.
+- Reference snapshots in the PR description and task log; include which scenario each image represents.
+- If animation is relevant, capture a short video/gif if tooling allows; otherwise note the motion in text.

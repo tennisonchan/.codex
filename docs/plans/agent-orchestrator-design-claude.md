@@ -3,6 +3,12 @@
 **Date:** 2025-11-18
 **Status:** Design Phase
 
+## At a Glance
+- Goal: orchestrate Claude agent instances for webhook-triggered tasks (triage, PR review, Slack analysis).
+- Focus: dynamic spawning, context gathering, concurrency limits, auditability, retries.
+- Decision points: lifecycle manager vs external queue ownership; failure handling + retry policy.
+- Outcome needed: approved architecture to begin implementation and integration with webhook gateway.
+
 ## Executive Summary
 
 The Agent Orchestrator is the core component that manages Claude AI agent instances to handle webhook-triggered automation tasks. It acts as a "manager" that spawns agents, prepares context, monitors execution, and processes results for tasks like Linear triage, Slack bug analysis, and GitHub PR reviews.

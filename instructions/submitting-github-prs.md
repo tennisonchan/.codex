@@ -1,8 +1,39 @@
 ## Submitting GitHub PRs
-1. Branching: create a fresh worktree per task using `~/.codex/scripts/create_tree.sh <branch> [base-branch]` from the repo root so env files copy, deps install, and upstream is set to `origin/<branch>`; if you create a worktree manually, immediately run `git push -u origin <branch>` (or `git branch --set-upstream-to=origin/<branch> <branch>`) to avoid upstream/default push mismatch.
-2. Implementation: follow repo guardrails in `AGENTS.md` (coding standards, toolchain, security, etc.).
-3. Validation: run `pnpm format:check`, `pnpm check-all`, and the most relevant targeted `pnpm test` for the code you touched.
-4. Commit: use Conventional Commit syntax (e.g., `feat: add invoice aging API (#123)`) and never edit lockfiles manually.
-5. UI proof: if UI changed, attach the Playwright snapshots noted above, refer to @./instructions/snapshot-requirements-ui-work.md
-6. PR: push the branch, open the PR with a clear description, linked issues, UI media, and a “Tests” section. Always tag the GitHub team reviewer `truewind-engineering` (on create: `gh pr create --reviewer truewind-engineering`; if updating an open PR: `gh pr edit --add-reviewer truewind-engineering`).
-7. Ask for review: post the PR link and a one-line summary in the `engineering` Slack channel via `chat.postMessage`, then DM a randomly chosen @eng member (exclude Tennison `U04CDCYD6BS`) asking for a review. Use the roster in `docs/context/slack-channels.md` to pick the DM target (e.g., `python3 - <<'PY'` with the ID list and `random.choice`), and log both pings in your task notes.
+
+### Purpose
+Ship PRs in a consistent, reviewable, and auditable way—every time.
+
+### Before you start
+- Create a task worktree with `~/.codex/scripts/create_tree.sh <branch> [base]` from repo root (copies env files, installs deps, sets upstream). If you ever create a worktree manually, immediately run `git push -u origin <branch>` (or `git branch --set-upstream-to=origin/<branch> <branch>`) to avoid upstream mismatch.
+- Confirm `gh auth status` works and follow AGENTS.md guardrails for coding standards and security.
+
+### Build & validate
+1. Implement the change following repo standards.
+2. Run `pnpm format:check`, `pnpm check-all`, and the most relevant `pnpm test` for touched areas.
+3. Use Conventional Commits for every commit (e.g., `feat: add invoice aging API (#123)`). Never edit lockfiles manually.
+
+### Prepare the PR
+- Include: concise summary, linked issues, UI media (if any), and a `Tests` section with command outputs.
+- Always tag GitHub team reviewer `truewind-engineering`:
+  - On create: `gh pr create --reviewer truewind-engineering`
+  - On update: `gh pr edit --add-reviewer truewind-engineering`
+
+### Request reviews (two touchpoints)
+1. Post in Slack `#engineering` (`C05GRNTBUDN`) via `chat.postMessage` with PR link + one-line summary.
+2. DM a randomly chosen @eng member (exclude Tennison `U04CDCYD6BS`) asking for review. Grab IDs from `docs/context/slack-channels.md`. Example selector:
+   ```bash
+   python3 - <<'PY'
+   import random
+   eng = [
+     "U06207X2BK6","U07223EMWJ0","U07HYV833UP","U0868F9RU2Z",
+     "U08KE4CRXNV","U08LPE05S15","U09MQ5WS621"
+   ]
+   print(random.choice(eng))
+   PY
+   ```
+3. Log both pings in your task notes (`docs/tasks/...`).
+
+### After opening
+- Monitor CI and address failures quickly.
+- Respond to reviewer comments via `gh` following @./instructions/reviewing-or-replying-on-github-prs.md.
+- Capture UI snapshots if applicable (see @./instructions/snapshot-requirements-ui-work.md).

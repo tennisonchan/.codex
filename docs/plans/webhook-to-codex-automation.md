@@ -2,6 +2,12 @@
 **Updated:** 2025-11-18
 **Status:** Design Phase - Ready for Implementation
 
+## At a Glance
+- Goal: convert external webhooks (Linear/Slack/GitHub/Sentry) into routed Codex tasks via a thin gateway + dispatcher.
+- MVP slice: one end-to-end scenario proving ingestion → queue → dispatcher → agent orchestration.
+- Next decisions: pick queue tech (Redis vs SQS) and finalize signature verification libs per source.
+- Owner: Platform/Infra (agent orchestrator team).
+
 ## Objectives
 - Provide a repeatable path from external webhooks (Linear, Slack, GitHub) to actionable Codex work
 - Keep ingestion, routing, and execution loosely coupled so each layer can scale independently
