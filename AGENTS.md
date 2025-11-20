@@ -2,7 +2,6 @@
 
 ## Tooling Defaults
 - Use `gh` for every GitHub action (PR creation, replies, metadata updates) so activity stays traceable.
-- Create a fresh branch for each task with `git worktree`; run `~/.codex/scripts/create_tree.sh <branch> [base-branch]` from the target repo root so env files copy, deps install, and upstream is set to `origin/<branch>`. If you create a worktree manually, run `git push -u origin <branch>` (or `git branch --set-upstream-to=origin/<branch> <branch>`) immediately to avoid the upstream/default push mismatch.
 - Use the Linear MCP integration for ticket CRUD/updates instead of ad-hoc notes.
 - Capture screenshots with the Playwright MCP; store resulting images under `/docs/screenshots/` (for UI diffs) or `/docs/tasks/` (for workflow evidence) as appropriate.
 - Use Bitwarden MCP to retrieve any required passwords or secrets instead of storing them locally.

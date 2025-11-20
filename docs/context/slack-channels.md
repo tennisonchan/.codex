@@ -7,3 +7,6 @@ Always follow @./instructions/communication-with-slack-api.md: send escalations 
 - `escalations-dev` (`C06TFGKCT1A`): Customer Success / incident bridge for production-impacting bugs; loop in when CS reports an outage or financial discrepancy that engineers must triage immediately.
 
 Keep these IDs synced with `SLACK_CHANNEL_IDS` (format `alias=channel_id`) so your automation payloads resolve to the right targets.
+
+## User Groups
+- engineering group: `@eng` (`S04DBQR22LE`): `U04CDCYD6BS` (Tennison Chan), `U06207X2BK6` (Caio Carvalho), `U07223EMWJ0` (Renato Menegasso), `U07HYV833UP` (Greg Konush), `U0868F9RU2Z` (Tiago Romero), `U08KE4CRXNV` (Chev Eldrid), `U08LPE05S15` (Jeff Lai), `U09MQ5WS621` (Vijayasankar Jothi)
