@@ -1,7 +1,7 @@
 ## Task Context & Planning
 
 ### Create the task log
-- For any non-trivial task, start a file in `docs/tasks/{timestamp}-{short_description}.md`.
+- For any non-trivial task, start a file in `~/.codex/docs/tasks/{timestamp}-{short_description}.md`.
 - Capture: goal, scope, assumptions, known risks, current Codex session id, and links to tickets/PRs.
 
 ### Keep it live
@@ -12,6 +12,6 @@
 - Make a multi-step plan for everything except the simplest ~25% of tasks.
 - Plans must be actionable, ordered, and updated as you complete steps.
 
-### Close the loop
-- When finishing, note the outcome and the reflection result (“updated instructions X/Y” or “no instruction changes”).
+### Reflect & Improve
+- When finishing, note the outcome and the reflection result (“updated context or instructions X/Y” or “no context/instruction changes”).
 - Link to any added docs in `instructions/` or `docs/context/` so future agents can find them.

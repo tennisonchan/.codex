@@ -1,10 +1,10 @@
 # Agent Handbook
 
 ## Core Behaviors
-- Work from a dedicated task worktree and keep an audit trail for every action (Slack pings via API, PR actions via `gh`, task notes in `docs/tasks`).
-- Default to accuracy and traceability: cite sources, log decisions, and keep secrets in Bitwarden MCP only.
-- Grow the knowledge base every task: convert new learnings into `docs/context/`, `instructions/`, or `scripts/` and surface them in this handbook.
-- Follow the linked SOPs instead of improvising; update them immediately when you find gaps.
+- Work from a dedicated task worktree and keep an audit trail for every action (Slack pings via API, PR actions via `gh`, task notes in `~/.codex/docs/tasks`).
+- Default to accuracy and traceability: cite sources, log decisions.
+- MUST: Improve the instructions and grow the knowledge base every task: convert new learnings into `docs/context/`, `instructions/`, or `scripts/` and surface them in this handbook.
+- MUST: Follow the linked SOPs instead of improvising; update them immediately when you find gaps.
 
 ## Quick Start (always)
 1. Run `gh auth status`; if broken, ping Tenn (`tenn=D04BPMQHZJN`) via Slack API.
@@ -23,7 +23,7 @@
 ## Operating Loop (Living Knowledge)
 1. **Log & Plan** — Use `docs/tasks/{timestamp}-{slug}.md`; follow @./instructions/task-context-and-planning.md.
 2. **Communicate** — Use Slack API for escalations/updates; channel aliases: @./docs/context/slack-channels.md; SOP: @./instructions/communication-with-slack-api.md.
-3. **Build** — Follow repo guardrails; for UI work take snapshots per @./instructions/snapshot-requirements-ui-work.md.
+3. **Build** — Write a ticket-derived acceptance checklist before coding (see @./instructions/implementation-accuracy-sop.md); follow repo guardrails; for UI work take snapshots per @./instructions/snapshot-requirements-ui-work.md.
 4. **Ship** — Branch/validation/PR text/review requests per @./instructions/submitting-github-prs.md.
 5. **Capture & Grow (do every task)** — Decide which artifacts to add:
    - Task log: keep `docs/tasks/{timestamp}-{slug}.md` up to date.
@@ -40,7 +40,7 @@
 - `docs/screenshots/` — UI proof: store Playwright MCP captures; link from task/context docs.
 
 ## Indexes to Maintain
-- **SOPs**: @./instructions/task-context-and-planning.md, @./instructions/communication-with-slack-api.md, @./instructions/snapshot-requirements-ui-work.md, @./instructions/submitting-github-prs.md, @./instructions/reviewing-or-replying-on-github-prs.md, @./instructions/post-task-reflection.md, @./instructions/add-new-instruction.md, @./instructions/add-context-in-the-knowledge-base.md, @./instructions/script-lifecycle.md.
+- **SOPs**: @./instructions/task-context-and-planning.md, @./instructions/communication-with-slack-api.md, @./instructions/snapshot-requirements-ui-work.md, @./instructions/submitting-github-prs.md, @./instructions/reviewing-or-replying-on-github-prs.md, @./instructions/post-task-reflection.md, @./instructions/add-new-instruction.md, @./instructions/add-context-in-the-knowledge-base.md, @./instructions/script-lifecycle.md, @./instructions/implementation-accuracy-sop.md.
 - **Context Hotlinks**: start at @./docs/context/slack-channels.md; add new context docs as they are created.
 - **Scripts**: @./scripts/create_tree.sh (task worktree bootstrap). Add each new script here and in `scripts/README.md` with a one-liner.
 
