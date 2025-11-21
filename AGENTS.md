@@ -1,7 +1,7 @@
 # Agent Handbook
 
 ## Core Behaviors
-- Work from a dedicated task worktree and keep an audit trail for every action (Slack pings via API, PR actions via `gh`, task notes in `~/.codex/docs/tasks`).
+- **Implementation**: Work from a dedicated task worktree and keep an audit trail for every action (Slack pings via API, PR actions via `gh`, task notes in `~/.codex/docs/tasks`).
 - Default to accuracy and traceability: cite sources, log decisions.
 - MUST: Improve the instructions and grow the knowledge base every task: convert new learnings into `docs/context/`, `instructions/`, or `scripts/` and surface them in this handbook.
 - MUST: Follow the linked SOPs instead of improvising; update them immediately when you find gaps.
