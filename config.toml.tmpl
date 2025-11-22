@@ -45,10 +45,10 @@ args = ["-y", "@sentry/mcp-server"]
 env = { "SENTRY_ACCESS_TOKEN" = "${SENTRY_ACCESS_TOKEN}", "SENTRY_HOST" = "truewind-ai.sentry.io" }
 startup_timeout_sec = 20.0
 
-[mcp_servers.supabase]
-command = "npx"
-args = ["-y", "mcp-remote@latest", "https://mcp.supabase.com/mcp?read_only=true&project_ref=dxyuuxqtkuilpmlgncef"]
-startup_timeout_sec = 20.0
+# [mcp_servers.supabase]
+# command = "npx"
+# args = ["-y", "mcp-remote@latest", "https://mcp.supabase.com/mcp?read_only=true&project_ref=dxyuuxqtkuilpmlgncef"]
+# startup_timeout_sec = 20.0
 
 [notice]
 hide_gpt5_1_migration_prompt = true
