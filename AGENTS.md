@@ -41,7 +41,7 @@
 ## Indexes to Maintain
 - **SOPs**: @./instructions/task-context-and-planning.md, @./instructions/communication-with-slack-api.md, @./instructions/snapshot-requirements-ui-work.md, @./instructions/submitting-github-prs.md, @./instructions/reviewing-or-replying-on-github-prs.md, @./instructions/post-task-reflection.md, @./instructions/add-new-instruction.md, @./instructions/add-context-in-the-knowledge-base.md, @./instructions/script-lifecycle.md, @./instructions/implementation-accuracy-sop.md.
 - **Context Hotlinks**: start at @./docs/context/slack-channels.md; add new context docs as they are created.
-- **Scripts**: @./scripts/create_tree.sh (task worktree bootstrap). Add each new script here and in `scripts/README.md` with a one-liner.
+- **Scripts**: @./scripts/create_tree.sh (task worktree bootstrap), @./scripts/setup-codex.sh (render config.toml from .env.local). Add each new script here and in `scripts/README.md` with a one-liner.
 
 ## Knowledge Base
 - Context and reference docs live in `./docs/context/`.

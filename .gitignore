@@ -3,5 +3,6 @@ history.jsonl
 log/
 sessions/
 .env.local
+config.toml
 
 /docs/tasks/

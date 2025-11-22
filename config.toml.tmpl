@@ -15,7 +15,7 @@ trust_level = "trusted"
 [mcp_servers.chrome-devtools]
 command = "npx"
 args = ["chrome-devtools-mcp@latest"]
-startup_timeout_sec = 15.0
+startup_timeout_sec = 20.0
 
 [mcp_servers.context7]
 command = "npx"
@@ -26,29 +26,29 @@ startup_timeout_sec = 20.0
 command = "npx"
 args = ["-y", "mcp-remote", "https://mcp.linear.app/sse"]
 env = { "LINEAR_API_KEY" = "${LINEAR_API_KEY}" }
-startup_timeout_sec = 15.0
+startup_timeout_sec = 20.0
 
 [mcp_servers.notion]
 command = "npx"
 args = ["-y", "@notionhq/notion-mcp-server"]
 env = { "NOTION_TOKEN" = "${NOTION_TOKEN}" }
-startup_timeout_sec = 15.0
+startup_timeout_sec = 20.0
 
 [mcp_servers.playwright]
 command = "npx"
 args = ["@playwright/mcp@latest"]
-startup_timeout_sec = 15.0
+startup_timeout_sec = 20.0
 
 [mcp_servers.sentry]
 command = "npx"
 args = ["-y", "@sentry/mcp-server"]
 env = { "SENTRY_ACCESS_TOKEN" = "${SENTRY_ACCESS_TOKEN}", "SENTRY_HOST" = "truewind-ai.sentry.io" }
-startup_timeout_sec = 15.0
+startup_timeout_sec = 20.0
 
 [mcp_servers.supabase]
 command = "npx"
 args = ["-y", "mcp-remote@latest", "https://mcp.supabase.com/mcp?read_only=true&project_ref=dxyuuxqtkuilpmlgncef"]
-startup_timeout_sec = 15.0
+startup_timeout_sec = 20.0
 
 [notice]
 hide_gpt5_1_migration_prompt = true
