@@ -3,7 +3,7 @@
 Use `chat.postMessage` so every escalation, review ask, and FYI is auditable and attributed.
 
 ## When to message
-- Blockers on tooling/creds (Bitwarden, `gh auth`, required secrets) or choices with material trade-offs.
+- Blockers on tooling/creds (`gh auth`, required secrets) or choices with material trade-offs.
 - Pausing a task ≥30 minutes awaiting guidance, or risk of missing a deadline.
 - Production/customer-impacting incidents or CS escalations.
 

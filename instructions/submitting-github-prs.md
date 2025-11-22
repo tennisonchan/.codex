@@ -15,9 +15,9 @@ Ship PRs in a consistent, reviewable, and auditable way—every time.
 
 ### Prepare the PR
 - Include: concise summary, linked issues, UI media (if any), and a `Tests` section with command outputs.
-- Always tag GitHub team reviewer `truewind-engineering`:
-  - On create: `gh pr create --reviewer truewind-engineering`
-  - On update: `gh pr edit --add-reviewer truewind-engineering`
+- **MUST** assign reviewers immediately (default: @truewind-ai/truewind-engineering):
+  - On create: `gh pr create --reviewer @truewind-ai/truewind-engineering`
+  - On update: `gh pr edit --add-reviewer @truewind-ai/truewind-engineering`
 
 ### Request reviews (two touchpoints)
 1. Post in Slack `#engineering` (`C05GRNTBUDN`) via `chat.postMessage` with PR link + one-line summary.

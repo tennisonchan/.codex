@@ -16,7 +16,6 @@
 - GitHub: use `gh` for PRs, reviews, metadata; keep all GitHub actions traceable.
 - Linear: use the Linear MCP for ticket CRUD/updates instead of ad-hoc notes.
 - Slack: send all pings through `chat.postMessage` (see @./instructions/communication-with-slack-api.md).
-- Secrets: pull credentials via Bitwarden MCP only.
 - UI proof: capture Playwright MCP screenshots; store under `docs/screenshots/` (UI diffs) or `docs/tasks/` (workflow evidence).
 - Scripts: store new helper scripts under `./scripts/`, make them executable, and document them here when added.
 
