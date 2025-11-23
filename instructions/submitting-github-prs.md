@@ -19,6 +19,25 @@ Ship PRs in a consistent, reviewable, and auditable way—every time.
   - On create: `gh pr create --reviewer @truewind-ai/truewind-engineering`
   - On update: `gh pr edit --add-reviewer @truewind-ai/truewind-engineering`
 
+### Compose the PR body (avoid literal "\n")
+- Write the body in a file so newlines render correctly. Example:
+  ```bash
+  cat > /tmp/pr.md <<'EOF'
+  ## Summary
+  - ...
+
+  ## Testing
+  - pnpm test foo
+  EOF
+  gh pr create -F /tmp/pr.md --reviewer @truewind-ai/truewind-engineering
+  ```
+- Never pass escaped newlines like `"line1\nline2"`; GitHub renders them as `\n` text.
+
+### Verify reviewers (do not skip)
+- After creation/update, confirm reviewers are present: `gh pr view --json reviewers --jq '.reviewers[].login'`.
+- If empty, immediately run: `gh pr edit --add-reviewer @truewind-ai/truewind-engineering`.
+- Log the reviewer check in your task notes (`docs/tasks/...`).
+
 ### Request reviews (two touchpoints)
 1. Post in Slack `#engineering` (`C05GRNTBUDN`) via `chat.postMessage` with PR link + one-line summary.
 2. DM a randomly chosen @eng member (exclude Tennison `U04CDCYD6BS`) asking for review. Grab IDs from `docs/context/slack-channels.md`. Example selector:

@@ -9,7 +9,7 @@
 ## Quick Start (always)
 1. Run `gh auth status`; if broken, ping Tenn (`tenn=D04BPMQHZJN`) via Slack API.
 2. Start Codex through `codev` so `.env.local` is loaded; confirm `SLACK_BOT_TOKEN` and `SLACK_CHANNEL_IDS` (must include `tenn=D04BPMQHZJN`).
-3. For new work: create a task worktree using `~/.codex/scripts/create_tree.sh <branch> [base]` before editing. When updating/replying to an existing PR, **do not create a new worktree**—checkout the PR branch and work directly on it (ensure upstream is set if missing).
+3. For new work: enforce one-ticket-one-worktree per `instructions/linear-worktrees.md`. Create the task worktree/branch (`<linear-key>-<slug>`) using `~/.codex/scripts/create_tree.sh <name> [base]` before editing. When updating/replying to an existing PR, **do not create a new worktree**—checkout the PR branch and work directly on it (ensure upstream is set if missing).
 4. Open or create `docs/tasks/{timestamp}-{slug}.md` for this task; capture goal and initial plan.
 
 ## Tooling Defaults
@@ -20,10 +20,10 @@
 - Scripts: store new helper scripts under `./scripts/`, make them executable, and document them here when added.
 
 ## Operating Loop (Living Knowledge)
-1. **Log & Plan** — Use `docs/tasks/{timestamp}-{slug}.md`; follow @./instructions/task-context-and-planning.md.
+1. **Log & Plan** — Use `docs/tasks/{timestamp}-{slug}.md`; record the worktree/branch in the log before editing; follow @./instructions/task-context-and-planning.md.
 2. **Communicate** — Use Slack API for escalations/updates; channel aliases: @./docs/context/slack-channels.md; SOP: @./instructions/communication-with-slack-api.md.
 3. **Build** — Write a ticket-derived acceptance checklist before coding (see @./instructions/implementation-accuracy-sop.md); follow repo guardrails; for UI work take snapshots per @./instructions/snapshot-requirements-ui-work.md.
-4. **Ship** — Branch/validation/PR text/review requests per @./instructions/submitting-github-prs.md.
+4. **Ship** — Branch/validation/PR text/review requests per @./instructions/submitting-github-prs.md; compose the PR body via file (no literal `\n`) and verify reviewer(s) assigned (`gh pr view --json reviewers --jq '.reviewers[].login'`; if empty: `gh pr edit --add-reviewer @truewind-ai/truewind-engineering`).
 5. **Capture & Grow (do every task)** — Decide which artifacts to add:
    - Task log: keep `docs/tasks/{timestamp}-{slug}.md` up to date.
    - Context: add `docs/context/{slug}.md` (scenario → decision → outcome). Link it in AGENTS under Context Hotlinks.
@@ -39,10 +39,11 @@
 - `docs/screenshots/` — UI proof: store Playwright MCP captures; link from task/context docs.
 
 ## Indexes to Maintain
-- **SOPs**: @./instructions/task-context-and-planning.md, @./instructions/communication-with-slack-api.md, @./instructions/snapshot-requirements-ui-work.md, @./instructions/submitting-github-prs.md, @./instructions/reviewing-or-replying-on-github-prs.md, @./instructions/post-task-reflection.md, @./instructions/add-new-instruction.md, @./instructions/add-context-in-the-knowledge-base.md, @./instructions/script-lifecycle.md, @./instructions/implementation-accuracy-sop.md.
+- **SOPs**: @./instructions/task-context-and-planning.md, @./instructions/communication-with-slack-api.md, @./instructions/snapshot-requirements-ui-work.md, @./instructions/submitting-github-prs.md, @./instructions/reviewing-or-replying-on-github-prs.md, @./instructions/post-task-reflection.md, @./instructions/add-new-instruction.md, @./instructions/add-context-in-the-knowledge-base.md, @./instructions/script-lifecycle.md, @./instructions/implementation-accuracy-sop.md, @./instructions/linear-worktrees.md.
 - **Context Hotlinks**: start at @./docs/context/slack-channels.md; add new context docs as they are created.
 - **Scripts**: @./scripts/create_tree.sh (task worktree bootstrap), @./scripts/setup-codex.sh (render config.toml from .env.local). Add each new script here and in `scripts/README.md` with a one-liner.
 
 ## Knowledge Base
 - Context and reference docs live in `./docs/context/`.
 - When `instructions/`, `docs/context/`, `scripts/`, or this file change, commit and push them with the task’s code (see @./instructions/submitting-github-prs.md).
+- `docs/context/agy-shortcut.md`: How to open a worktree with `agy <folder_name>`.

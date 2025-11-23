@@ -19,4 +19,4 @@
 5) **Evidence**:
    - Add quick proof for risk areas (screenshot for UI, log/test snippet for backend).
    - Note any intentional deviations and approvals in the task log/PR.
-6) **PR notes**: include the checklist with statuses and explicit statement about scope adherence.
+6) **PR notes**: include the checklist with statuses and explicit statement about scope adherence. Confirm PR has reviewer(s) assigned (see @./instructions/submitting-github-prs.md verification command); note the reviewer check in the task log.
