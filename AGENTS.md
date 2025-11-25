@@ -23,11 +23,11 @@
 1. **Log & Plan** — Use `docs/tasks/{timestamp}-{slug}.md`; record the worktree/branch in the log before editing; follow @./instructions/task-context-and-planning.md.
 2. **Communicate** — Use Slack API for escalations/updates; channel aliases: @./docs/context/slack-channels.md; SOP: @./instructions/communication-with-slack-api.md.
 3. **Build** — Write a ticket-derived acceptance checklist before coding (see @./instructions/implementation-accuracy-sop.md); follow repo guardrails; for UI work take snapshots per @./instructions/snapshot-requirements-ui-work.md.
-4. **Ship** — Branch/validation/PR text/review requests per @./instructions/submitting-github-prs.md; compose the PR body via file (no literal `\n`) and verify reviewer(s) assigned (`gh pr view --json reviewers --jq '.reviewers[].login'`; if empty: `gh pr edit --add-reviewer @truewind-ai/truewind-engineering`).
+4. **Ship** — Branch/validation/PR text/review requests per @./instructions/submitting-github-prs.md & @./instructions/reviewing-or-replying-on-github-prs.md; compose the PR body via file (no literal `\n`) and verify reviewer(s) assigned (`gh pr view --json reviewers --jq '.reviewers[].login'`; if empty: `gh pr edit --add-reviewer @truewind-ai/truewind-engineering`).
 5. **Capture & Grow (do every task)** — Decide which artifacts to add:
-   - Task log: keep `docs/tasks/{timestamp}-{slug}.md` up to date.
+   - Task log: keep `docs/tasks/{timestamp}-{slug}.md` up to date, e.g. `docs/tasks/20251124-fix-bugs.md`.
    - Context: add `docs/context/{slug}.md` (scenario → decision → outcome). Link it in AGENTS under Context Hotlinks.
-   - Instruction: add `instructions/{topic}.md` (purpose, when to use, steps, examples). Link it in AGENTS under SOPs.
+   - Instruction: add `instructions/{topic}.md` (purpose, keywords (tags), when to use, steps, examples). Link it in AGENTS under SOPs.
    - Script: add to `scripts/` with exec bit, shebang, and header (what it does, inputs, usage). Update `scripts/README.md` and list it in AGENTS Scripts.
 6. **Reflect & Publish** — Run @./instructions/post-task-reflection.md. Commit/push code + new artifacts together; note new docs/scripts in PR/Slack updates.
 

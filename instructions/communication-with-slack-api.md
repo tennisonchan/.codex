@@ -13,6 +13,8 @@ Use `chat.postMessage` so every escalation, review ask, and FYI is auditable and
 - `escalations-dev` → `C06TFGKCT1A` (incident bridge / CS escalations)
 See @./docs/context/slack-channels.md for the full alias & user-group roster.
 
+**PR review asks**: When an instruction says "ask for PR review in Slack," post the PR link to `engineering` (`#engineering`, channel `C05GRNTBUDN`) via `chat.postMessage`.
+
 ## How to send
 1. Draft text with task reference, the decision/ask, why it matters now, and options/deadlines.
 2. Send with the bot token:
@@ -26,8 +28,8 @@ See @./docs/context/slack-channels.md for the full alias & user-group roster.
 4. Log the ping (channel, timestamp, ask) in `docs/tasks/...` or your next Codex response.
 
 ## Good uses
-- Tooling failure or secret access blockers.
-- Leadership choice between risky options.
+- Escalations, tooling failure or secret access blockers.
+- Decisions making between risky options.
 - Incident heads-up or CS-reported outages.
 
 ## Avoid

@@ -39,8 +39,9 @@ Ship PRs in a consistent, reviewable, and auditable way—every time.
 - Log the reviewer check in your task notes (`docs/tasks/...`).
 
 ### Request reviews (two touchpoints)
+When an instruction says "ask for PR review in Slack," post the PR link to `engineering` (`#engineering`, channel `C05GRNTBUDN`) via `chat.postMessage`.
 1. Post in Slack `#engineering` (`C05GRNTBUDN`) via `chat.postMessage` with PR link + one-line summary.
-2. DM a randomly chosen @eng member (exclude Tennison `U04CDCYD6BS`) asking for review. Grab IDs from `docs/context/slack-channels.md`. Example selector:
+2. DM a randomly chosen @eng member (exclude tenn `U04CDCYD6BS`) asking for review. Grab IDs from `docs/context/slack-channels.md`. Example selector:
    ```bash
    python3 - <<'PY'
    import random
